@@ -6,6 +6,7 @@ public class Raj {
     private String email;
     private String phoneno;
     
+    // constructor
     public Raj(int id, String name, String email, String phoneno) {
         this.id = id;
         this.name = name;
