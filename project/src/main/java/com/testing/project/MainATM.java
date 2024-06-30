@@ -21,7 +21,7 @@ public class MainATM {
 
 			int ch = sc.nextInt();
 			sc.nextLine(); 
-//            System.out.println("Fill details - ");
+
 			switch (ch) {
 			case 1:
 
