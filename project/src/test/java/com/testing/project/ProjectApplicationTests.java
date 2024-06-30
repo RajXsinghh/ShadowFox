@@ -6,8 +6,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ProjectApplicationTests {
 
+//	@Test
+//	void contextLoads() {
+//	}
+	
+	public BankManagement bank;
+	
 	@Test
-	void contextLoads() {
+	public void testDeposit() {
+		
 	}
 
 }

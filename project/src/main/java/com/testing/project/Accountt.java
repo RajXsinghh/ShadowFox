@@ -1,24 +1,25 @@
 package com.testing.project;
 
 import java.time.LocalDateTime;
+import java.util.*;
 
-public class Accountt {
+public class Accountt  {
     private int id;
     private String name;
     private double balance;
     private LocalDateTime time;
     private double deposit;
+    private double withdraw;
     
     
-    
-    public Accountt(int id, String name, double balance, LocalDateTime time, double deposit) {
+    public Accountt(int id, String name, double balance, LocalDateTime time, double deposit,double withdraw) {
         this.id = id;
         this.name = name;
         this.balance = balance;
         this.time = time;
         this.deposit=deposit;
-        
-    }
+        this.withdraw=withdraw;    
+       }
 
 
 	public int getId() {
@@ -60,22 +61,51 @@ public class Accountt {
 		this.time = time;
 	}
 
-
-	
-	
-	public void deposit(double amount, LocalDateTime time, double balance) {
+    public void deposit(double deposit, LocalDateTime time, double balance) {
 		
-	    this.balance=balance+amount;
+	    this.balance=balance+deposit;
 		this.time=time;
+		
 	}
 
-     public void withdraw(double draw, double balance, LocalDateTime time) {
-    	 
-    	 this.balance=balance-draw;
+     public void withdraw(double withdraw, double balance, LocalDateTime time) {
+    	if(balance>=withdraw) {
+    	 this.balance=balance-withdraw;
+    	 this.deposit = -withdraw;
     	 this.time=time;
-    	 
-    	 
+     }
+    	else {
+    		System.out.println("Insufficient balance");
+    	}
      }
 
+	public double getDeposit() {
+		return deposit;
+	}
 
+
+	public void setDeposit(double deposit) {
+		this.deposit = deposit;
+	}
+
+
+	public LocalDateTime getTime() {
+		return time;
+	}
+
+
+	public void setTime(LocalDateTime time) {
+		this.time = time;
+	}
+
+
+	public double getWithdraw() {
+		return withdraw;
+	}
+
+
+	public void setWithdraw(double withdraw) {
+		this.withdraw = withdraw;
+	}
+ 
 }

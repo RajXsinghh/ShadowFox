@@ -14,7 +14,7 @@ class RajDatabase {
 
     // Create
     public void addRaj(String name, String email, String phoneno) {
-        Raj raj = new Raj(nextId++, name, email, phoneno);
+        Raj raj = new Raj(++nextId, name, email, phoneno);
         rajx.add(raj);
         System.out.println("ID: " + nextId + raj);
 
