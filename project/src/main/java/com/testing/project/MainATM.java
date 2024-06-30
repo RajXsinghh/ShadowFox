@@ -27,7 +27,7 @@ public class MainATM {
 
 				System.out.println("Enter your name : ");
 				String name = sc.nextLine();
-				// sc.nextLine();
+				
 
 				System.out.println("Enter amount to deposit :");
 				double deposit = sc.nextDouble();
@@ -121,6 +121,7 @@ public class MainATM {
                  return;
              default:
                  System.out.println("Invalid choice.");
+                 // Invalid Choice
          }
      }
  }
