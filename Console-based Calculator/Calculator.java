@@ -1,10 +1,13 @@
 import java.util.Scanner;
-
+// Calculaor 
 class A {
-
-    Scanner s = new Scanner(System.in);
+    Scanner s;
     double x;
     double y;
+
+    public A(Scanner s) {
+        this.s = s;
+    }
 
     public void add() {
         try {
@@ -12,36 +15,36 @@ class A {
             x = s.nextDouble();
             System.out.println("Enter 2nd no. :");
             y = s.nextDouble();
-
             System.out.println(x + y);
         } catch (Exception e) {
-
+            System.out.println("Invalid input. Please try again.");
+            s.next(); 
         }
     }
 
     public void subtract() {
         try {
-            System.out.println("Enter 1st no. :" + x);
+            System.out.println("Enter 1st no. :");
             x = s.nextDouble();
-            System.out.println("Enter 2nd no. :" + y);
+            System.out.println("Enter 2nd no. :");
             y = s.nextDouble();
-
             System.out.println(x - y);
         } catch (Exception e) {
-
+            System.out.println("Invalid input. Please try again.");
+            s.next(); 
         }
     }
 
     public void multiply() {
         try {
-            System.out.println("Enter 1st no. :" + x);
+            System.out.println("Enter 1st no. :");
             x = s.nextDouble();
-            System.out.println("Enter 2nd no. :" + y);
+            System.out.println("Enter 2nd no. :");
             y = s.nextDouble();
-
             System.out.println(x * y);
         } catch (Exception e) {
-
+            System.out.println("Invalid input. Please try again.");
+            s.next(); 
         }
     }
 
@@ -51,10 +54,10 @@ class A {
             x = s.nextDouble();
             System.out.println("Enter 2nd no. :");
             y = s.nextDouble();
-
-            System.out.println("Answer is : "+x / y);
+            System.out.println("Answer is : " + x / y);
         } catch (Exception e) {
-
+            System.out.println("Invalid input. Please try again.");
+            s.next(); 
         }
     }
 
@@ -62,10 +65,10 @@ class A {
         try {
             System.out.println("Enter your no. :");
             x = s.nextDouble();
-
             System.out.println("Square root is :" + Math.sqrt(x));
         } catch (Exception e) {
-
+            System.out.println("Invalid input. Please try again.");
+            s.next(); 
         }
     }
 
@@ -75,138 +78,132 @@ class A {
             x = s.nextDouble();
             System.out.println("Enter the power :");
             y = s.nextDouble();
-
             System.out.println("Result :" + Math.pow(x, y));
         } catch (Exception e) {
-
+            System.out.println("Invalid input. Please try again.");
+            s.next(); 
         }
-
     }
 }
 
 class B {
-    double x, y;
-
-    public void temp() {
+    public void temp(Scanner s) {
         try {
-            try (Scanner s = new Scanner(System.in)) {
-                System.out.println("Enter 1 for Celcius to Fahrenheit :");
-                System.out.println("Enter 2 for Fahrenheit to Celcius :");
+            System.out.println("Enter 1 for Celsius to Fahrenheit :");
+            System.out.println("Enter 2 for Fahrenheit to Celsius :");
+            int c = s.nextInt();
+            double x, y;
 
-                int c = s.nextInt();
-
-                switch (c) {
-
-                    case 1:
-                        System.out.println("Enter Celsius temperature :");
-                        x = s.nextInt();
-                        double z = (x * 9 / 5) + 32;
-                        System.out.println("So Fahrenheit equal to :" + z);
-                        break;
-
-                    case 2:
-                        System.out.println("Enter Fahrenheit temperature :");
-                        y = s.nextInt();
-                        double j = (y - 32) * 5 / 9;
-                        System.out.println("So Celsius temperature :" + j);
-
-                        break;
-                }
+            switch (c) {
+                case 1:
+                    System.out.println("Enter Celsius temperature :");
+                    x = s.nextDouble();
+                    double z = (x * 9 / 5) + 32;
+                    System.out.println("So Fahrenheit equal to :" + z);
+                    break;
+                case 2:
+                    System.out.println("Enter Fahrenheit temperature :");
+                    y = s.nextDouble();
+                    double j = (y - 32) * 5 / 9;
+                    System.out.println("So Celsius temperature :" + j);
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
             }
         } catch (Exception e) {
-
+            System.out.println("Invalid input. Please try again.");
+            s.next(); 
         }
     }
 }
 
 class C {
-
-    int ruppee, dollar;
-
-    public void currency() {
-
+    public void currency(Scanner sc) {
         try {
             System.out.println("Enter your choice :-");
-            System.out.println(" Press 1 -Convert Ruppee to Dollar -");
-            System.out.println("Press 2 -Convert Dollar to Ruppee -");
-            try (Scanner sc = new Scanner(System.in)) {
-                int choice = sc.nextInt();
+            System.out.println("Press 1 - Convert Rupee to Dollar -");
+            System.out.println("Press 2 - Convert Dollar to Rupee -");
+            int choice = sc.nextInt();
 
-                switch (choice) {
-
-                    case 1:
-                        System.out.println("Enter ruppee amount : ");
-                        int R = sc.nextInt();
-                        int x = R / 82;
-                        System.out.println("Dollar is :" + x);
-
-                    case 2:
-                        System.out.println("Enter dollar amount : ");
-                        int D = sc.nextInt();
-                        int y = D * 82;
-                        System.out.println("Ruppee is :" + y);
-                }
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter rupee amount : ");
+                    int R = sc.nextInt();
+                    double x = R / 82.0;
+                    System.out.println("Dollar is :" + x);
+                    break;
+                case 2:
+                    System.out.println("Enter dollar amount : ");
+                    int D = sc.nextInt();
+                    double y = D * 82.0;
+                    System.out.println("Rupee is :" + y);
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
             }
         } catch (Exception e) {
-
+            System.out.println("Invalid input. Please try again.");
+            sc.next(); 
         }
-
     }
-
 }
 
 public class Calculator {
     public static void main(String[] args) {
-        
-        Scanner sc =new Scanner(System.in);
-        while(true) {
-        System.out.println("Enter 1 for Addition :");
-        System.out.println("Enter 2 for Subtraction :");
-        System.out.println("Enter 3 for Multiplication :");
-        System.out.println("Enter 4 for Division :");
-        System.out.println("Enter 5 for SquareRoot :");
-        System.out.println("Enter 6 for Exponentiation :");
-        System.out.println("Enter 7 for Temperator Conversion :");
-        System.out.println("Enter 8 for currency exchange :");
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter no : ");
+        while (true) {
+            System.out.println("Enter 1 for Addition :");
+            System.out.println("Enter 2 for Subtraction :");
+            System.out.println("Enter 3 for Multiplication :");
+            System.out.println("Enter 4 for Division :");
+            System.out.println("Enter 5 for SquareRoot :");
+            System.out.println("Enter 6 for Exponentiation :");
+            System.out.println("Enter 7 for Temperature Conversion :");
+            System.out.println("Enter 8 for Currency Exchange :");
+            System.out.println("Enter 9 to Exit :");
+            System.out.println("Enter no : ");
 
-        A x=new A();
-        B y=new B();
-        C z=new C();
-        int choice = sc.nextInt();
+            A x = new A(sc);
+            B y = new B();
+            C z = new C();
+            int choice = sc.nextInt();
 
-        switch(choice) {
-            case 1: x.add();
-            break;
-
-            case 2: x.subtract();
-            break;
-
-            case 3: x.multiply();
-            break;
-
-            case 4: x.divide();
-            break;
-            
-            case 5: x.sqroot();
-            break;
-
-            case 6: x.expo();
-            break;
-
-            case 7: y.temp();
-            break;
-
-            case 8: z.currency();
-            break;
-
-            default: System.out.println("Invalid choice choose correct no.");
-                     break;
-        } 
-    
+            switch (choice) {
+                case 1:
+                    x.add();
+                    break;
+                case 2:
+                    x.subtract();
+                    break;
+                case 3:
+                    x.multiply();
+                    break;
+                case 4:
+                    x.divide();
+                    break;
+                case 5:
+                    x.sqroot();
+                    break;
+                case 6:
+                    x.expo();
+                    break;
+                case 7:
+                    y.temp(sc);
+                    break;
+                case 8:
+                    z.currency(sc);
+                    break;
+                case 9:
+                    sc.close();
+                    System.out.println("Exiting...");
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please choose a correct number.");
+                    break;
+            }
+        }
     }
-   // sc.close();
-    
-}
 }
